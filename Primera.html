@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi página web</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3efff;
+            color: #30264b;
+        }
+
+        header {
+            background: #49316d;
+            color: white;
+            padding: 25px 10px;
+            text-align: center;
+        }
+
+        nav {
+            background: #2e2147;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: transparent;
+            color: white;
+            border: 2px solid #c9b5ff;
+            border-radius: 20px;
+            padding: 11px 20px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        nav button:hover,
+        nav button.activo {
+            background: #c9b5ff;
+            color: #2e2147;
+        }
+
+        .pagina {
+            display: none;
+            min-height: 75vh;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px #00000015;
+            text-align: center;
+        }
+
+        .pagina.activa {
+            display: block;
+            animation: aparecer 0.35s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 700px;
+            max-height: 390px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        .texto {
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .boton {
+            background: #65449a;
+            color: white;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 15px;
+        }
+
+        .boton:hover {
+            background: #422969;
+        }
+
+        .moraleja {
+            background: #eee7ff;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .anuncio {
+            background: #e5f4df;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .eslogan {
+            color: #23733d;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2e2147;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .pagina {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            nav button {
+                padding: 9px 12px;
+            }
+
+            .eslogan {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>✨ Mi espacio creativo</h1>
+        <p>Reflexiones, historias y mensajes para compartir.</p>
+    </header>
+
+    <nav>
+        <button class="activo" onclick="mostrarPagina('inicio', this)">
+            Inicio
+        </button>
+
+        <button onclick="mostrarPagina('historia', this)">
+            Historia
+        </button>
+
+        <button onclick="mostrarPagina('anuncio', this)">
+            Anuncio publicitario
+        </button>
+    </nav>
+
+    <!-- PÁGINA 1: REFLEXIÓN -->
+
+    <section id="inicio" class="pagina activa">
+        <h2>🌅 Nunca dejes de soñar</h2>
+
+        <img
+            class="imagen"
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1100&q=85"
+            alt="Paisaje hermoso al amanecer">
+
+        <div class="texto">
+            <h3>Una reflexión sobre la vida</h3>
+
+            <p>
+                A veces pensamos que para conseguir nuestros
+                sueños necesitamos tener todo resuelto, pero
+                la verdad es que cada gran logro comienza con
+                un pequeño paso.
+            </p>
+
+            <p>
+                En la vida encontraremos dificultades, cometeremos
+                errores y tendremos días en los que querremos
+                rendirnos. Sin embargo, cada experiencia nos
+                enseña algo nuevo y nos ayuda a crecer.
+            </p>
+
+            <p>
+                No debemos compararnos con los demás, porque
+                cada persona tiene su propio camino. Lo importante
+                es creer en nuestras capacidades, aprender de
+                nuestros errores y seguir adelante.
+            </p>
+
+            <h3>💜 Cree en ti y nunca dejes de intentarlo.</h3>
+        </div>
+
+        <button class="boton"
+            onclick="mostrarPagina('historia')">
+            Descubrir una historia →
+        </button>
+    </section>
+
+    <!-- PÁGINA 2: HISTORIA FANTÁSTICA -->
+
+    <section id="historia" class="pagina">
+        <h2>🏰 La princesa de la luna</h2>
+
+        <img
+            class="imagen"
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1100&q=85"
+            alt="Paisaje fantástico de un bosque misterioso">
+
+        <div class="texto">
+            <h3>Una leyenda fantástica</h3>
+
+            <p>
+                Cuenta la leyenda que, en un reino escondido
+                entre las montañas, existía una princesa llamada
+                Elara que podía escuchar los secretos de las estrellas.
+            </p>
+
+            <p>
+                Cada noche subía a la torre más alta de su castillo
+                para observar la luna. Una noche descubrió que
+                su luz estaba desapareciendo y que el reino
+                comenzaba a quedarse en completa oscuridad.
+            </p>
+
+            <p>
+                Decidida a descubrir el motivo, Elara emprendió
+                un viaje por un bosque encantado. En el camino
+                encontró un pequeño zorro que conocía el sendero
+                hacia el lago de los deseos.
+            </p>
+
+            <p>
+                Al llegar al lago, una voz misteriosa le explicó
+                que la luna recuperaría su brillo cuando alguien
+                realizara un acto de bondad sin esperar nada
+                a cambio.
+            </p>
+
+            <p>
+                En ese momento, Elara encontró un pájaro herido.
+                Aunque tenía prisa por salvar su reino, decidió
+                ayudarlo y cuidarlo hasta que pudiera volar.
+                Entonces, el pájaro se transformó en una estrella
+                brillante y la luna volvió a iluminar el cielo.
+            </p>
+
+            <p>
+                Desde aquella noche, los habitantes del reino
+                recordaron que incluso el gesto más pequeño
+                puede producir algo maravilloso.
+            </p>
+
+            <div class="moraleja">
+                <h3>✨ Moraleja</h3>
+                <p>
+                    La verdadera magia está en la bondad y en
+                    ayudar a los demás sin esperar recompensas.
+                </p>
+            </div>
+        </div>
+
+        <button class="boton"
+            onclick="mostrarPagina('anuncio')">
+            Ver anuncio publicitario →
+        </button>
+    </section>
+
+    <!-- PÁGINA 3: ANUNCIO AMBIENTAL -->
+
+    <section id="anuncio" class="pagina">
+        <div class="anuncio">
+
+            <h2>🌎 Campaña EcoVida</h2>
+
+            <img
+                class="imagen"
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1100&q=85"
+                alt="Animales rodeados de naturaleza">
+
+            <p class="eslogan">
+                ¡MENOS BASURA, MÁS NATURALEZA!
+            </p>
+
+            <h3>💚 ¡El planeta te necesita!</h3>
+
+            <p>
+                ¿Quieres un mundo más limpio y saludable?
+                ¡Tú puedes ser parte del cambio!
+            </p>
+
+            <p>
+                No necesitas gastar mucho dinero para cuidar
+                el medio ambiente. Con pequeñas acciones
+                puedes contribuir a proteger nuestro planeta.
+            </p>
+
+            <h3>🌱 ¡Empieza hoy!</h3>
+
+            <p>♻️ Reutiliza los materiales que todavía sirven.</p>
+            <p>💧 Ahorra agua todos los días.</p>
+            <p>🌳 Cuida las plantas y los árboles.</p>
+            <p>🗑️ Deposita la basura en su lugar.</p>
+            <p>🛍️ Usa bolsas reutilizables cuando puedas.</p>
+
+            <h2>¡Cuidar el planeta es tarea de todos!</h2>
+
+            <p>
+                Comparte este mensaje con tus amigos y familiares.
+                Un pequeño cambio puede inspirar a muchas personas.
+            </p>
+
+        </div>
+
+        <button class="boton"
+            onclick="mostrarPagina('inicio')">
+            ← Volver al inicio
+        </button>
+    </section>
+
+    <footer>
+        <p>Mi espacio creativo | Hecho con dedicación ✨</p>
+    </footer>
+
+    <script>
+        function mostrarPagina(id, boton) {
+            // Ocultar todas las páginas
+            let paginas = document.querySelectorAll(".pagina");
+
+            paginas.forEach(function(pagina) {
+                pagina.classList.remove("activa");
+            });
+
+            // Mostrar solamente la página seleccionada
+            document.getElementById(id).classList.add("activa");
+
+            // Actualizar el botón seleccionado
+            let botones = document.querySelectorAll("nav button");
+
+            botones.forEach(function(elemento) {
+                elemento.classList.remove("activo");
+            });
+
+            // Marcar el botón del menú, si se pulsó uno
+            if (boton) {
+                boton.classList.add("activo");
+            } else {
+                botones.forEach(function(elemento) {
+                    if (elemento.getAttribute("onclick").includes(id)) {
+                        elemento.classList.add("activo");
+                    }
+                });
+            }
+
+            // Volver arriba para mostrar el contenido elegido
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
+</html>
+
